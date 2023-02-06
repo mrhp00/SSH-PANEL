@@ -1,0 +1,91 @@
+*:focus,
+*:active {
+  box-shadow: none !important;
+  outline: none !important;
+}
+* {
+  text-decoration: none !important;
+}
+.custom-scrollbars__content {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.custom-scrollbars__content::-webkit-scrollbar {
+  display: none;
+}
+.backbone {
+  background-color: #faf0e6;
+  /* width: 100vw;
+    height: 100vh; */
+  text-decoration: none;
+  max-width: 97vw;
+  max-height: 99vh;
+}
+.header-bar {
+  background-color: #e4d5b7;
+  display: flex;
+  width: 100%;
+  height: 10%;
+  max-width: 100vw;
+  align-items: center;
+}
+.container-box {
+  background-color: #fafafa;
+}
+.side-bar {
+  background-color: #e4d5b7;
+  width: 10%;
+  height: 100%;
+  max-height: 100vh;
+  min-height: 100vh;
+  text-align: center;
+}
+.user-row {
+  background-color: #93c6e7;
+  /* height: 5vh; */
+  text-align: center;
+  line-height: 5vh;
+  align-items: center;
+}
+.user-header {
+  height: 5vh;
+  text-align: center;
+  line-height: 5vh;
+}
+.user-container {
+  height: 75vh;
+}
+.user-container2 {
+  height: 60vh;
+}
+.odd-row-color {
+  background-color: #fff0db !important;
+}
+.even-row-color {
+  background-color: #eed9c4 !important;
+}
+.menu-icon {
+  height: 8vh !important;
+  width: 8vh !important;
+  margin-inline-start: 1vh !important;
+  cursor: pointer !important;
+}
+.menu-nav {
+  height: 5vh !important;
+  width: 8vh !important;
+  cursor: pointer !important;
+}
+.side-logo {
+  width: 50px;
+  height: 100px;
+  display: grid;
+}
+.side-btn {
+  background-color: #fff0db !important;
+  color: black !important;
+  border-color: black !important;
+  border-radius: 45px !important;
+  width: 90% !important;
+}
