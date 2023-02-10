@@ -6,6 +6,8 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import SideBar from "./assets/components/SideBar";
 import AllUser from "./assets/components/AllUsers";
+import OnlineUsers from "./assets/components/OnlineUsers";
+import ActiveUsers from "./assets/components/ActiveUsers";
 
 const App = () => {
   return (
@@ -29,8 +31,22 @@ const App = () => {
                       <AllUser css="custom-scrollbars__content user-container" />
                     }
                   />
+                  <Route path="/" element={<Dashboard />} />
+                  <Route
+                    path="/OnlineUsers"
+                    element={
+                      <OnlineUsers css="custom-scrollbars__content user-container3"/>
+                    }
+                  />
+                  <Route
+                    path="/ActiveUsers"
+                    element={
+                      <ActiveUsers css="custom-scrollbars__content user-container3"/>
+                    }
+                    />
                 </Routes>
               </Container>
+      
             </Row>
           </Col>
         </Row>

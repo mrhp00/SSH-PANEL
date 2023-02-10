@@ -35,6 +35,9 @@ const SideBar = () => {
                 variant="outlined"
                 startIcon={<ContactPhoneIcon />}
                 className="side-btn"
+                onClick={() => {
+                  nav("/OnlineUsers");
+                }}
               >
                 Online
               </Button>

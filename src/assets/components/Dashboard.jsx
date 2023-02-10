@@ -62,7 +62,8 @@ const Dashboard = () => {
                   <h3>{offenderUsers}</h3>
                 </Card.Body>
                 <Card.Footer className="d-none d-lg-block d-xl-block d-xxl-block">
-                  <Link to={"/OffenderUsers"}>View</Link>
+                  {/* <Link to={"/OffenderUsers"}>View</Link> */}
+                  View
                 </Card.Footer>
               </Card>
             </Col>

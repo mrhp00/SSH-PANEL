@@ -16,12 +16,12 @@
   display: none;
 }
 .backbone {
-  background-color: #faf0e6;
+  background-color: #faf0e6 !important;
   /* width: 100vw;
     height: 100vh; */
-  text-decoration: none;
-  max-width: 97vw;
-  max-height: 99vh;
+  text-decoration: none !important;
+  max-width: 97vw !important;
+  max-height: 99vh !important;
 }
 .header-bar {
   background-color: #e4d5b7;
@@ -60,6 +60,9 @@
 .user-container2 {
   height: 60vh;
 }
+.user-container3 {
+  height: 85vh;
+}
 .odd-row-color {
   background-color: #fff0db !important;
 }
@@ -88,4 +91,7 @@
   border-color: black !important;
   border-radius: 45px !important;
   width: 90% !important;
+}
+.br-15{
+  border-radius: 15px !important;
 }
