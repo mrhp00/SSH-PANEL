@@ -2,6 +2,18 @@ import { createStore } from "redux";
 
 const initialState = {
   currentPage: "",
+  onlineUsers: [
+    {
+      user: "mike",
+      ip: "10.10.10.10",
+      pid: "4421",
+    },
+    {
+      user: "sara",
+      ip: "10.10.10.10",
+      pid: "1132",
+    },
+  ],
   allUsers: [
     {
       id: 0,
@@ -10,7 +22,7 @@ const initialState = {
       email: "abcd123456@email.com",
       mobile: "09999999999",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -25,7 +37,7 @@ const initialState = {
       email: "pqweoi37@email.com",
       mobile: "99632165843",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "1",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -40,7 +52,7 @@ const initialState = {
       email: "asdaipoi7@email.com",
       mobile: "11299300332",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "1",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -55,7 +67,7 @@ const initialState = {
       email: "asdas2348@email.com",
       mobile: "00199633205",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -70,7 +82,7 @@ const initialState = {
       email: "ewrt43@email.com",
       mobile: "11299633249",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -85,7 +97,7 @@ const initialState = {
       email: "asdret546@email.com",
       mobile: "11299300256",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -100,7 +112,7 @@ const initialState = {
       email: "tydaa234@email.com",
       mobile: "11245963215",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -115,7 +127,7 @@ const initialState = {
       email: "asdasd12@email.com",
       mobile: "55214596328",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -130,7 +142,7 @@ const initialState = {
       email: "dfhbnA876@email.com",
       mobile: "77266482384",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -145,7 +157,7 @@ const initialState = {
       email: "qpwi23894@email.com",
       mobile: "77362625264",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -160,7 +172,7 @@ const initialState = {
       email: "sjkldfnskld@email.com",
       mobile: "99847564711",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -175,7 +187,7 @@ const initialState = {
       email: "sjdhfda7645@email.com",
       mobile: "83766594098",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -190,7 +202,7 @@ const initialState = {
       email: "kjdfhzxm87@email.com",
       mobile: "73635244234",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -205,7 +217,7 @@ const initialState = {
       email: "iouvjn78345@email.com",
       mobile: "77354673645",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -220,7 +232,7 @@ const initialState = {
       email: "pijnvg892374@email.com",
       mobile: "93837254756",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -235,7 +247,7 @@ const initialState = {
       email: "askjm2348@email.com",
       mobile: "93726547388",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -250,7 +262,7 @@ const initialState = {
       email: "oijxc182@email.com",
       mobile: "90238472442",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -265,7 +277,7 @@ const initialState = {
       email: "mnzxcx123@email.com",
       mobile: "27264960384",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -280,7 +292,7 @@ const initialState = {
       email: "928374jkash@email.com",
       mobile: "72691847362",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -295,7 +307,7 @@ const initialState = {
       email: "iouwqe7342@email.com",
       mobile: "82765194736",
       referal: "mr.john doe",
-      multiuser: true,
+      multiuser: "3",
       startdate: "1401/11/15",
       finishdate: "1401/12/15",
       enable: true,
@@ -304,6 +316,7 @@ const initialState = {
       currentip: "10.10.10.10",
     },
   ],
+  addUserModal:false,
 };
 
 const changeState = (state = initialState, { type, ...rest }) => {
@@ -313,7 +326,11 @@ const changeState = (state = initialState, { type, ...rest }) => {
     return Object.assign({}, state, { currentPage: rest.currentPage });
   } else if (type === "SET_USERS") {
     return Object.assign({}, state, { currentPage: rest.users });
-  } else {
+  } else if (type === "SET_ONLINE") {
+    return Object.assign({}, state, { currentPage: rest.online });
+  } else if (type === "SET_USERMODAL") {
+    return Object.assign({}, state, { addUserModal: rest.modalstate });
+  }else {
     return state;
   }
 };

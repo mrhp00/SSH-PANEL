@@ -8,6 +8,7 @@ import SideBar from "./assets/components/SideBar";
 import AllUser from "./assets/components/AllUsers";
 import OnlineUsers from "./assets/components/OnlineUsers";
 import ActiveUsers from "./assets/components/ActiveUsers";
+import Setting from "./assets/components/Setting";
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
             <Row>
               <Container className="mt-3">
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
                   <Route
                     path="/AllUsers"
                     element={
@@ -35,18 +36,18 @@ const App = () => {
                   <Route
                     path="/OnlineUsers"
                     element={
-                      <OnlineUsers css="custom-scrollbars__content user-container3"/>
+                      <OnlineUsers css="custom-scrollbars__content user-container3" />
                     }
                   />
                   <Route
                     path="/ActiveUsers"
                     element={
-                      <ActiveUsers css="custom-scrollbars__content user-container3"/>
+                      <ActiveUsers css="custom-scrollbars__content user-container3" />
                     }
-                    />
+                  />
+                  <Route path="/Setting" element={<Setting />} />
                 </Routes>
               </Container>
-      
             </Row>
           </Col>
         </Row>

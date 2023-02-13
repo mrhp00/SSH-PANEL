@@ -1,24 +1,27 @@
+//IMPORTS
 import React, { useEffect, useState } from "react";
-import { Row, Col, Form, Container as div } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
+import {} from "@mui/material";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import GroupRemoveOutlinedIcon from "@mui/icons-material/GroupRemoveOutlined";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
-import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 
 const AllUser = (props) => {
+  //STATES AND REFS
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.currentPage);
   const [fetchedUsers, setFetchedUsers] = useState([]);
   const [search, setSearch] = useState("");
-
   const allUsers = useSelector((state) => state.allUsers);
+
+  //CLASS SELECTOR
   const generateColorClass = (line) => {
     if (parseInt(line) % 2 !== 0) {
       return "mx-3 mt-2 user-row odd-row-color";
@@ -27,6 +30,7 @@ const AllUser = (props) => {
     }
   };
 
+  //SEARCH
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -38,6 +42,7 @@ const AllUser = (props) => {
       user.mobile.toLowerCase().includes(search.toLowerCase())
   );
 
+  //STARTUP
   useEffect(() => {
     setFetchedUsers(allUsers);
     dispatch({
@@ -46,6 +51,7 @@ const AllUser = (props) => {
     });
   }, []);
 
+  //RENDER
   return (
     <>
       <div>
@@ -75,18 +81,36 @@ const AllUser = (props) => {
             </Col>
           </Row>
         ) : (
-          <Row className="user-header mx-1 sticky">
-            <Col className="col-12 ">
-              <TextField
-                className="d-grid"
-                id="outlined-search"
-                label="Live Search ...User,Email,Phone,Referal..."
-                type="search"
-                size="small"
-                onChange={handleChange}
-              />
-            </Col>
-          </Row>
+          <>
+            <Row className="user-header mx-1 sticky">
+              <Col className="col-12 ">
+                <TextField
+                  className="d-grid"
+                  id="outlined-search"
+                  label="Live Search ...User,Email,Phone,Referal..."
+                  type="search"
+                  size="small"
+                  onChange={handleChange}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col className="col-12 mt-3 d-none d-lg-block d-xl-block d-xxl-block text-center">
+                <Button
+                  variant="primary"
+                  className="side-btn"
+                  onClick={() => {
+                    dispatch({
+                      type: "SET_USERMODAL",
+                      modalstate: true,
+                    });
+                  }}
+                >
+                  Add new user
+                </Button>
+              </Col>
+            </Row>
+          </>
         )}
 
         <Row className="user-header mx-3 sticky">

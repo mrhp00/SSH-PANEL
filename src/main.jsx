@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./assets/components/Login";
 
 window.store = store;
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/*",
     element: <App />,
+  },
+  {
+    path: "/",
+    element: <Login />,
   },
 ]);
 

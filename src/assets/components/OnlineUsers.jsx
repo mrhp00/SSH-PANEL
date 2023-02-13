@@ -1,35 +1,28 @@
 import React, { useEffect, useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  Container,
-  OverlayTrigger,
-  Tooltip,
-} from "react-bootstrap";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Divider from "@mui/material/Divider";
+import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import TextField from "@mui/material/TextField";
 import PowerOffOutlinedIcon from "@mui/icons-material/PowerOffOutlined";
-import { Button } from "@mui/material";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import Popover from "react-bootstrap/Popover";
 
-const AllUser = (props) => {
+const OnlineUsers = (props) => {
+  // STATES AND REFS
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.currentPage);
+  const onlineUsers = useSelector((state) => state.onlineUsers);
   const [fetchedUsers, setFetchedUsers] = useState([]);
   const [search, setSearch] = useState("");
 
+  // POP
   const renderTooltip = (props) => (
     <Tooltip id="control-tooltip" {...props}>
       Kick User
     </Tooltip>
   );
 
-  const allUsers = useSelector((state) => state.allUsers);
+  //CLASS
   const generateColorClass = (line) => {
     if (parseInt(line) % 2 !== 0) {
       return "mx-3 mt-3 user-row odd-row-color br-15";
@@ -38,43 +31,29 @@ const AllUser = (props) => {
     }
   };
 
+  //LIVE SEARCH
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
-  const filter = fetchedUsers.filter(
-    (user) =>
-      user.username.toLowerCase().includes(search.toLowerCase()) ||
-      user.email.toLowerCase().includes(search.toLowerCase()) ||
-      user.referal.toLowerCase().includes(search.toLowerCase()) ||
-      user.mobile.toLowerCase().includes(search.toLowerCase())
+  const filter = fetchedUsers.filter((user) =>
+    user.user.toLowerCase().includes(search.toLowerCase())
   );
 
+  // FUNCTIONS
   const createUserList = () => {
-    let onlineUsers = [];
-    allUsers.map((value) => {
-      if (value.onlinestate === "true") {
-        onlineUsers.push({
-          id: value.id,
-          username: value.username,
-          email: value.email,
-          mobile: value.mobile,
-          referal: value.referal,
-          currentip: value.currentip,
-        });
-      }
-    });
-    console.log(onlineUsers);
-    return onlineUsers;
+    setFetchedUsers(onlineUsers);
   };
 
+  //STARTUP
   useEffect(() => {
-    setFetchedUsers(createUserList());
+    createUserList();
     dispatch({
       type: "SET_PAGE",
       currentPage: "Online Users",
     });
   }, []);
 
+  //RENDER
   return (
     <>
       <div className={props.css}>
@@ -83,24 +62,23 @@ const AllUser = (props) => {
             <TextField
               className="d-grid"
               id="outlined-search"
-              label="Live Search ...User,Email,Phone,Referal..."
+              label="Search"
               type="search"
               size="small"
               onChange={handleChange}
             />
           </Col>
         </Row>
-
-        <Row className="user-header mx-3 sticky">
+        <Row className="user-header mx-3 sticky mt-2">
           <Col>User name</Col>
           <Col>IP</Col>
           <Col>Disconnect</Col>
         </Row>
         <div className={props.css}>
           {filter.map((value, key) => (
-            <Row className={generateColorClass(key)}>
-              <Col>{value.username}</Col>
-              <Col>{value.currentip}</Col>
+            <Row className={generateColorClass(key)} key={value.id}>
+              <Col>{value.user}</Col>
+              <Col>{value.ip}</Col>
               <Col>
                 <OverlayTrigger
                   placement="left"
@@ -117,4 +95,4 @@ const AllUser = (props) => {
     </>
   );
 };
-export default AllUser;
+export default OnlineUsers;

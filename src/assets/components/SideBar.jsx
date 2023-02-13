@@ -24,7 +24,7 @@ const SideBar = () => {
                 startIcon={<DashboardIcon />}
                 className="side-btn"
                 onClick={() => {
-                  nav("/");
+                  nav("/dashboard");
                 }}
               >
                 Home
@@ -47,6 +47,9 @@ const SideBar = () => {
                 variant="outlined"
                 startIcon={<TuneIcon />}
                 className="side-btn"
+                onClick={() => {
+                  nav("/ActiveUsers");
+                }}
               >
                 Setting
               </Button>
