@@ -48,7 +48,7 @@ const SideBar = () => {
                 startIcon={<TuneIcon />}
                 className="side-btn"
                 onClick={() => {
-                  nav("/ActiveUsers");
+                  nav("/Setting");
                 }}
               >
                 Setting
